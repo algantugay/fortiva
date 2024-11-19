@@ -27,8 +27,9 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
+            dd('s');
             // Giriş başarılı, dashboard'a yönlendir
-            return redirect('/dashboard');
+            return view('/');
         }
 
         // Giriş başarısız, hata mesajı ile geri dön

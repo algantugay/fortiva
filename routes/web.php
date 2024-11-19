@@ -11,9 +11,7 @@ Route::get('/', function () {
 });
 
 // Dashboard rotası
-Route::get('/dashboard', function () {
-    return view('layouts.index');
-})->middleware('auth');
+Route::get('/',[DashboardController::class])->name('dashboard');
 
 // Login rotaları
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
