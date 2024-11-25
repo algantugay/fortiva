@@ -10,14 +10,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Dashboard rotası
-Route::get('/',[DashboardController::class])->name('dashboard');
-
 // Login rotaları
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login')->middleware('guest');
-
-// Giriş yapma işlemi
-Route::post('login', [AuthController::class, 'login'])->middleware('guest');
+Route::post('login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 
 // Register rotaları
 Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
@@ -26,3 +21,5 @@ Route::post('/register', [RegisterController::class, 'register']);
 // Logout rotası
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
+// Dashboard rotası
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard')->middleware('auth');

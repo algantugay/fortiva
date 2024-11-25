@@ -1,16 +1,4 @@
 <!DOCTYPE html>
-<!--
-Author: Keenthemes
-Product Name: Metronic
-Product Version: 8.2.0
-Purchase: https://1.envato.market/EA4JP
-Website: http://www.keenthemes.com
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
 
 <html lang="en">
 	<!--begin::Head-->
@@ -54,7 +42,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Wrapper-->
 						<div class="w-lg-500px p-10">
 							<!--begin::Form-->
-                            <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="{{ route('register') }}" method="POST">
+                            <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="{{ route('register') }}" data-kt-redirect-url="/dashboard" method="POST">
                                 @csrf
 								<!--begin::Heading-->
 								<div class="text-center mb-11">
@@ -71,12 +59,12 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Input group=-->
 								<div class="fv-row mb-8">
 									<!--begin::Name-->
-									<input type="text" placeholder="Name" name="name" autocomplete="off" class="form-control bg-transparent" />
+									<input type="text" placeholder="Name" name="name" id="name" autocomplete="off" class="form-control bg-transparent" required />
 									<!--end::Name-->
 								</div>
 								<div class="fv-row mb-8">
 									<!--begin::Email-->
-									<input type="email" placeholder="Email" name="email" autocomplete="off" class="form-control bg-transparent" />
+									<input type="email" placeholder="Email" name="email" id="email" autocomplete="off" class="form-control bg-transparent" required />
 									<!--end::Email-->
 								</div>
 								<!--begin::Input group-->
@@ -85,7 +73,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="mb-1">
 										<!--begin::Input wrapper-->
 										<div class="position-relative mb-3">
-											<input class="form-control bg-transparent" type="password" placeholder="Password" name="password" autocomplete="off" />
+											<input class="form-control bg-transparent" type="password" placeholder="Password" name="password" id="password" autocomplete="off" required />
 											<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 												<i class="ki-duotone ki-eye-slash fs-2"></i>
 												<i class="ki-duotone ki-eye fs-2 d-none"></i>
