@@ -13,7 +13,7 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function dashboard()
     {
         return view('layouts.index');
     }

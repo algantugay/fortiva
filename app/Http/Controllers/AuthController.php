@@ -15,6 +15,12 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
+        // Kayıt formunu göster
+    public function showRegisterForm()
+    {
+        return view('auth.register');
+    }
+
     // Giriş işlemi
     public function login(Request $request)
     {

@@ -1,6 +1,5 @@
 <?php
 namespace App\Http\Controllers;
-namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -34,7 +33,7 @@ class RegisterController extends Controller
         // Kullanıcıyı giriş yaptır
         Auth::login($user);
 
-        return redirect()->route('/login'); // Dashboard'a yönlendir
+        return redirect()->route('/dashboard'); // Dashboard'a yönlendir
     } catch (\Exception $e) {
         // Hata durumunda, hata mesajını döndür
         return back()->withErrors(['message' => 'Bir hata oluştu, lütfen tekrar deneyiniz.']);
